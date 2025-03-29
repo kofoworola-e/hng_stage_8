@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import folium
 from folium.plugins import MarkerCluster, HeatMap
-from streamlit_folium import folium_static
+from streamlit_folium import st_folium
 import plotly.express as px
 
 # -------------------------------
@@ -95,7 +95,7 @@ heat_data = df[['Latitude', 'Longitude', 'Global_Composite_Score']].dropna().val
 HeatMap(heat_data, radius=12, blur=15, max_zoom=12).add_to(m)
 
 # Display map
-folium_static(m, width=1200, height=500)
+st_folium(m, width=1200, height=500)
 
 # -------------------------------
 # 4. Party Vote Distribution & Outlier Z-Scores
